@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+	<_name>Export selection as svg</_name>
+	<id>sk.linuxos.export_selection</id>
+
+	<dependency type="executable" location="extensions">export_selection.py</dependency>
+	<dependency type="executable" location="extensions">inkex.py</dependency>
+
+	<param name="wrap_transform" type="boolean" _gui-text="Wrap final document in transform">false</param>
+	<param name="export_dir" type="string" gui-text="Path to save image">./inkscape_export/</param>
+
+	<effect needs-document="true" needs-live-preview="false">
+		<object-type>all</object-type>
+		<menu-tip>Export selection to separate SVG file.</menu-tip>
+		<effects-menu>
+			<submenu _name="Export"/>
+		</effects-menu>
+	</effect>
+
+	<script>
+		<command reldir="extensions" interpreter="python">export_selection.py</command>
+	</script>
+</inkscape-extension>
