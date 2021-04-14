@@ -72,8 +72,8 @@ class ExportObject(inkex.EffectExtension):
 			width = math.ceil(bbox.width)
 			height = math.ceil(bbox.height)
 			template.attrib['viewBox'] = f'0 0 {width} {height}'
-			template.attrib['width'] = f'{width}'
-			template.attrib['height'] = f'{height}'
+			template.attrib['width'] = f'{width}' + self.svg.unit
+			template.attrib['height'] = f'{height}' + self.svg.unit
 
 			if filename is None:
 				filename = elem.attrib.get('id', None)
